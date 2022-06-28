@@ -35,7 +35,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage>  {
   final TextEditingController _controller = TextEditingController();
   final _channel = WebSocketChannel.connect(
-    Uri.parse('wss://10.0.2.2:7000'),
+    Uri.parse('wss://192.168.1.7:8000'),
   );
 
 
@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage>  {
       _channel.sink.add(_controller.text);
     }
 
-    Socket socket = await Socket.connect('10.0.2.2', 8000);
+    Socket socket = await Socket.connect('192.168.1.7', 8000);
     socket.add(utf8.encode('hello'));
     socket.close();
 
